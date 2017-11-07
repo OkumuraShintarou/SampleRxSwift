@@ -8,20 +8,41 @@
 
 /* Begin PBXBuildFile section */
 		506310C51FB18613009A594C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506310C41FB18613009A594C /* AppDelegate.swift */; };
-		506310C71FB18613009A594C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506310C61FB18613009A594C /* ViewController.swift */; };
-		506310CA1FB18613009A594C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 506310C81FB18613009A594C /* Main.storyboard */; };
+		506310C71FB18613009A594C /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506310C61FB18613009A594C /* FirstViewController.swift */; };
 		506310CC1FB18613009A594C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 506310CB1FB18613009A594C /* Assets.xcassets */; };
 		506310CF1FB18613009A594C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 506310CD1FB18613009A594C /* LaunchScreen.storyboard */; };
+		506310D71FB196ED009A594C /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 506310D61FB196ED009A594C /* RxSwift.framework */; };
+		506310D81FB196ED009A594C /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 506310D61FB196ED009A594C /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		506310DC1FB196FA009A594C /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 506310DB1FB196FA009A594C /* RxCocoa.framework */; };
+		506310DF1FB1993B009A594C /* FirstViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506310DE1FB1993B009A594C /* FirstViewModel.swift */; };
+		506310E11FB19978009A594C /* FirstViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 506310E01FB19978009A594C /* FirstViewController.storyboard */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		506310D91FB196ED009A594C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				506310D81FB196ED009A594C /* RxSwift.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		506310C11FB18613009A594C /* RxSwiftSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxSwiftSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		506310C41FB18613009A594C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		506310C61FB18613009A594C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		506310C91FB18613009A594C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		506310C61FB18613009A594C /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		506310CB1FB18613009A594C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		506310CE1FB18613009A594C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		506310D01FB18613009A594C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		506310D61FB196ED009A594C /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		506310DB1FB196FA009A594C /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		506310DE1FB1993B009A594C /* FirstViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewModel.swift; sourceTree = "<group>"; };
+		506310E01FB19978009A594C /* FirstViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FirstViewController.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +50,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				506310DC1FB196FA009A594C /* RxCocoa.framework in Frameworks */,
+				506310D71FB196ED009A594C /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,8 +61,10 @@
 		506310B81FB18613009A594C = {
 			isa = PBXGroup;
 			children = (
+				506310D61FB196ED009A594C /* RxSwift.framework */,
 				506310C31FB18613009A594C /* RxSwiftSample */,
 				506310C21FB18613009A594C /* Products */,
+				506310DA1FB196FA009A594C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +80,30 @@
 			isa = PBXGroup;
 			children = (
 				506310C41FB18613009A594C /* AppDelegate.swift */,
-				506310C61FB18613009A594C /* ViewController.swift */,
-				506310C81FB18613009A594C /* Main.storyboard */,
+				506310E41FB1C34E009A594C /* FirstView */,
 				506310CB1FB18613009A594C /* Assets.xcassets */,
 				506310CD1FB18613009A594C /* LaunchScreen.storyboard */,
 				506310D01FB18613009A594C /* Info.plist */,
 			);
 			path = RxSwiftSample;
+			sourceTree = "<group>";
+		};
+		506310DA1FB196FA009A594C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				506310DB1FB196FA009A594C /* RxCocoa.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		506310E41FB1C34E009A594C /* FirstView */ = {
+			isa = PBXGroup;
+			children = (
+				506310C61FB18613009A594C /* FirstViewController.swift */,
+				506310DE1FB1993B009A594C /* FirstViewModel.swift */,
+				506310E01FB19978009A594C /* FirstViewController.storyboard */,
+			);
+			path = FirstView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,6 +116,8 @@
 				506310BD1FB18613009A594C /* Sources */,
 				506310BE1FB18613009A594C /* Frameworks */,
 				506310BF1FB18613009A594C /* Resources */,
+				506310D91FB196ED009A594C /* Embed Frameworks */,
+				506310DD1FB19714009A594C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -123,20 +167,39 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				506310E11FB19978009A594C /* FirstViewController.storyboard in Resources */,
 				506310CF1FB18613009A594C /* LaunchScreen.storyboard in Resources */,
 				506310CC1FB18613009A594C /* Assets.xcassets in Resources */,
-				506310CA1FB18613009A594C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		506310DD1FB19714009A594C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		506310BD1FB18613009A594C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				506310C71FB18613009A594C /* ViewController.swift in Sources */,
+				506310C71FB18613009A594C /* FirstViewController.swift in Sources */,
+				506310DF1FB1993B009A594C /* FirstViewModel.swift in Sources */,
 				506310C51FB18613009A594C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -144,14 +207,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		506310C81FB18613009A594C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				506310C91FB18613009A594C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		506310CD1FB18613009A594C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -276,6 +331,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K6D2HDE4M9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = RxSwiftSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Shintarou.RxSwiftSample;
@@ -291,6 +350,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K6D2HDE4M9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = RxSwiftSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Shintarou.RxSwiftSample;
