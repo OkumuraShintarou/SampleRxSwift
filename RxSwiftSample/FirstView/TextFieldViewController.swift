@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-final class FirstViewController: UIViewController {
+final class TextFieldViewController: UIViewController {
     
     fileprivate let bag = DisposeBag()
     
@@ -21,10 +21,10 @@ final class FirstViewController: UIViewController {
         super.viewDidLoad()
         bindTextField()
     }
-
+ 
 }
 
-extension FirstViewController {
+extension TextFieldViewController {
     func bindTextField() {
         textField
             .rx

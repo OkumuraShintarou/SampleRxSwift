@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 
 
-final class FirstViewModel {
+final class TextFieldViewModel {
     fileprivate let bag = DisposeBag()
     
 }
