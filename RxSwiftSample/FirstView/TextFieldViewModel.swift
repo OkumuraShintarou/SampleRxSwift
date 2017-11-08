@@ -13,4 +13,17 @@ import RxSwift
 final class TextFieldViewModel {
     fileprivate let bag = DisposeBag()
     
+    let fetchedText$: Observable<String>
+    
+    let fetchedTextTrigger = PublishSubject<String>()
+    
+    init() {
+        
+        fetchedText$ = fetchedTextTrigger
+            .flatMap{ s -> Observable<String> in
+               return Observable.just(s)
+        }
+        .share(replay: 1)
+    }
+    
 }
