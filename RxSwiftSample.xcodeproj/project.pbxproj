@@ -17,7 +17,10 @@
 		506310DC1FB196FA009A594C /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 506310DB1FB196FA009A594C /* RxCocoa.framework */; };
 		506310DF1FB1993B009A594C /* TextFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506310DE1FB1993B009A594C /* TextFieldViewModel.swift */; };
 		506310E11FB19978009A594C /* TextFieldViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 506310E01FB19978009A594C /* TextFieldViewController.storyboard */; };
-		506310E71FB1FA5C009A594C /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506310E61FB1FA5C009A594C /* R.generated.swift */; };
+		506310EA1FB2C356009A594C /* MergeTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506310E91FB2C356009A594C /* MergeTextViewController.swift */; };
+		506310EC1FB2C36D009A594C /* MergeTextViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506310EB1FB2C36D009A594C /* MergeTextViewModel.swift */; };
+		506310F41FB2C487009A594C /* MergeTextViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 506310F31FB2C487009A594C /* MergeTextViewController.storyboard */; };
+		506310F61FB2C9D9009A594C /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506310F51FB2C9D9009A594C /* R.generated.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -46,7 +49,10 @@
 		506310DB1FB196FA009A594C /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		506310DE1FB1993B009A594C /* TextFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldViewModel.swift; sourceTree = "<group>"; };
 		506310E01FB19978009A594C /* TextFieldViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TextFieldViewController.storyboard; sourceTree = "<group>"; };
-		506310E61FB1FA5C009A594C /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		506310E91FB2C356009A594C /* MergeTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MergeTextViewController.swift; sourceTree = "<group>"; };
+		506310EB1FB2C36D009A594C /* MergeTextViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MergeTextViewModel.swift; sourceTree = "<group>"; };
+		506310F31FB2C487009A594C /* MergeTextViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MergeTextViewController.storyboard; sourceTree = "<group>"; };
+		506310F51FB2C9D9009A594C /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		B2AF4CF78A2094981CBBC5E2 /* Pods-RxSwiftSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwiftSample/Pods-RxSwiftSample.release.xcconfig"; sourceTree = "<group>"; };
 		B6011E0BF8C47279B3DA2D56 /* Pods_RxSwiftSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwiftSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -87,9 +93,10 @@
 		506310C31FB18613009A594C /* RxSwiftSample */ = {
 			isa = PBXGroup;
 			children = (
-				506310E61FB1FA5C009A594C /* R.generated.swift */,
 				506310C41FB18613009A594C /* AppDelegate.swift */,
-				506310E41FB1C34E009A594C /* FirstView */,
+				506310F51FB2C9D9009A594C /* R.generated.swift */,
+				506310E41FB1C34E009A594C /* TextFieldView */,
+				506310E81FB2C2C0009A594C /* MergeTextView */,
 				506310CB1FB18613009A594C /* Assets.xcassets */,
 				506310CD1FB18613009A594C /* LaunchScreen.storyboard */,
 				506310D01FB18613009A594C /* Info.plist */,
@@ -106,14 +113,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		506310E41FB1C34E009A594C /* FirstView */ = {
+		506310E41FB1C34E009A594C /* TextFieldView */ = {
 			isa = PBXGroup;
 			children = (
 				506310C61FB18613009A594C /* TextFieldViewController.swift */,
 				506310DE1FB1993B009A594C /* TextFieldViewModel.swift */,
 				506310E01FB19978009A594C /* TextFieldViewController.storyboard */,
 			);
-			path = FirstView;
+			path = TextFieldView;
+			sourceTree = "<group>";
+		};
+		506310E81FB2C2C0009A594C /* MergeTextView */ = {
+			isa = PBXGroup;
+			children = (
+				506310E91FB2C356009A594C /* MergeTextViewController.swift */,
+				506310EB1FB2C36D009A594C /* MergeTextViewModel.swift */,
+				506310F31FB2C487009A594C /* MergeTextViewController.storyboard */,
+			);
+			path = MergeTextView;
 			sourceTree = "<group>";
 		};
 		E7EA3D2EFDF3B0A95CD2344F /* Pods */ = {
@@ -191,6 +208,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				506310E11FB19978009A594C /* TextFieldViewController.storyboard in Resources */,
+				506310F41FB2C487009A594C /* MergeTextViewController.storyboard in Resources */,
 				506310CF1FB18613009A594C /* LaunchScreen.storyboard in Resources */,
 				506310CC1FB18613009A594C /* Assets.xcassets in Resources */,
 			);
@@ -227,7 +245,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/RxSwiftSample\"\n\n";
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" \"$SRCROOT\"\n\n";
 		};
 		B2C4E15E8E1D8299F2E65842 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -289,8 +307,10 @@
 			files = (
 				506310C71FB18613009A594C /* TextFieldViewController.swift in Sources */,
 				506310DF1FB1993B009A594C /* TextFieldViewModel.swift in Sources */,
+				506310EA1FB2C356009A594C /* MergeTextViewController.swift in Sources */,
 				506310C51FB18613009A594C /* AppDelegate.swift in Sources */,
-				506310E71FB1FA5C009A594C /* R.generated.swift in Sources */,
+				506310EC1FB2C36D009A594C /* MergeTextViewModel.swift in Sources */,
+				506310F61FB2C9D9009A594C /* R.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
