@@ -12,15 +12,15 @@ import RxSwift
 final class MergeTextViewModel {
     fileprivate let bag = DisposeBag()
     
-    let fechedText$: Observable<String>
+    let yourNameText$: Observable<String>
     
-    let fetchedTextTrigger = PublishSubject<String>()
+    let yourNameTextTrigger = PublishSubject<String>()
     
     var name = String()
     
     init() {
         
-        fechedText$ = fetchedTextTrigger
+        yourNameText$ = yourNameTextTrigger
             .flatMap { t -> Observable<String> in
                 return Observable.just(t)
         }

@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-final class TestLabelView: UIView {
+final class NameLabelView: UIView {
     
     fileprivate let bag = DisposeBag()
     
@@ -25,10 +25,9 @@ final class TestLabelView: UIView {
     }
     
     // .xib自体の高さ、幅を指定
-    static func create(_ vm: MergeTextViewModel) -> TestLabelView {
+    static func create() -> NameLabelView {
         let view = R.nib.labelView.firstView(owner: nil)!
-        //view.frame.size.height = height()
-        view.vm = vm
+        view.frame.size.height = height()
         view.frame.size.width = UIScreen.main.bounds.width
         return view
     }
@@ -40,14 +39,4 @@ final class TestLabelView: UIView {
     
 }
 
-extension TestLabelView {
-//    func bindVM() {
-//        vm.fechedText$
-//            .subscribe(onNext: { [weak self] response in
-//                guard let wself = self else { return }
-//                wself.vm.name = response
-//            })
-//            .disposed(by: bag)
-//    }
-}
 

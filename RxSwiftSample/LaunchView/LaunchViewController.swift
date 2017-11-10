@@ -10,17 +10,16 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-final class TextFieldViewController: UIViewController {
+final class LaunchViewController: UIViewController {
     
     fileprivate let bag = DisposeBag()
     
-    fileprivate private(set) var tfVm = TextFieldViewModel()
-    fileprivate private(set) var mtVm = MergeTextViewModel()
+    fileprivate private(set) var vm = TextFieldViewModel()
     
-    fileprivate var testLabelView: TestLabelView! //TestLabelViewのインスタンスを作成
+    fileprivate var testLabelView: NameLabelView! //TestLabelViewのインスタンスを作成
     
     static func vc() -> UIViewController {
-        return R.storyboard.textFieldViewController().instantiateInitialViewController()!
+        return R.storyboard.launchViewController().instantiateInitialViewController()!
     }
     
     @IBOutlet fileprivate weak var label:     UILabel!
@@ -30,7 +29,7 @@ final class TextFieldViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         bindTextField()
-        bindButtons()
+        bindButton()
         bindFromVM()
         
     }
@@ -40,9 +39,9 @@ final class TextFieldViewController: UIViewController {
     }
 }
 
-extension TextFieldViewController {
+extension LaunchViewController {
     
-    private func bindButtons() {
+    private func bindButton() {
         button
             .rx
             .tap
@@ -50,8 +49,7 @@ extension TextFieldViewController {
             .subscribe(onNext: { [weak self] _ in
                 guard let wself = self else { return }
                 guard let text  =  wself.label.text else { return }
-                wself.tfVm.fetchedTextTrigger.onNext("\(text)")
-                wself.mtVm.fetchedTextTrigger.onNext("fffff")
+                wself.vm.fetchedTextTrigger.onNext("\(text)")
             })
             .disposed(by: bag)
     }
@@ -66,18 +64,11 @@ extension TextFieldViewController {
     }
     
     private func bindFromVM() {
-        tfVm
+        vm
             .fetchedText$
             .subscribe(onNext: { [weak self] value in
                 guard let wself = self else { return }
                 wself.showAlert(value: value)
-            })
-            .disposed(by: bag)
-        
-        mtVm.fechedText$
-            .subscribe(onNext: { [weak self] response in
-                guard let wself = self else { return }
-                wself.mtVm.name = response
             })
             .disposed(by: bag)
         
@@ -91,7 +82,7 @@ extension TextFieldViewController {
         )
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler:{
             (action: UIAlertAction!) -> Void in
-            MergeTextViewController.show(from: self)
+            SelectColorViewController.show(from: self)
         })
         )
         self.present(alert, animated: true, completion: nil)

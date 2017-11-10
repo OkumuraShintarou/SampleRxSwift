@@ -10,19 +10,19 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-final class MergeTextViewController: UIViewController {
+final class SelectColorViewController: UIViewController {
     
     fileprivate private(set) var vm = MergeTextViewModel()
     
     fileprivate let bag = DisposeBag()
     
-    fileprivate var helloLabel: TestLabelView!
-    fileprivate var nameLabel: TestLabelView!
+    fileprivate var helloLabel: NameLabelView!
+    fileprivate var yourNameLabel: NameLabelView!
     
     @IBOutlet fileprivate weak var mergeView: UIView!
     
     static func show(from: UIViewController) {
-        let vc = R.storyboard.mergeTextViewController().instantiateInitialViewController()!
+        let vc = R.storyboard.selectColorViewController().instantiateInitialViewController()!
         from.navigationController?.pushViewController(vc, animated: false)
     }
     
@@ -33,30 +33,30 @@ final class MergeTextViewController: UIViewController {
     
 }
 
-extension MergeTextViewController {
+extension SelectColorViewController {
     private func configureUI() {
         configureView()
     }
     
     private func configureView() {
-        helloLabel = TestLabelView.create(vm)
+        helloLabel = NameLabelView.create()
         helloLabel.frame = CGRect(
             x: 0,
             y: 50,
             width: mergeView.frame.width, // mergeViewの幅に大きさを合わせる
-            height: TestLabelView.height()
+            height: NameLabelView.height()
         )
         
-        nameLabel = TestLabelView.create(vm)
-        nameLabel.frame = CGRect(
+        yourNameLabel = NameLabelView.create()
+        yourNameLabel.frame = CGRect(
             x: 0,
             y: 50,
             width: mergeView.frame.width,
-            height: TestLabelView.height()
+            height: NameLabelView.height()
         )
        // nameLabel.bindVM()
-        nameLabel.configureLabel()
-        mergeView.addSubview(nameLabel)
+        yourNameLabel.configureLabel()
+        mergeView.addSubview(yourNameLabel)
     }
     
     

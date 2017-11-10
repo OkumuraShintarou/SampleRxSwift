@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Merge Text View Controller-->
+        <!--Select Color View Controller-->
         <scene sceneID="ggm-5p-s2c">
             <objects>
-                <viewController storyboardIdentifier="MergeTextViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jez-SK-vmt" customClass="MergeTextViewController" customModule="RxSwiftSample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MergeTextViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jez-SK-vmt" customClass="SelectColorViewController" customModule="RxSwiftSample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Z6f-qS-5Xf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -9,18 +9,18 @@
 /* Begin PBXBuildFile section */
 		227281AC41875176312EDE3E /* Pods_RxSwiftSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6011E0BF8C47279B3DA2D56 /* Pods_RxSwiftSample.framework */; };
 		501F98131FB453A800364941 /* LabelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 501F98121FB453A800364941 /* LabelView.xib */; };
-		501F98171FB4546400364941 /* TestLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501F98161FB4546400364941 /* TestLabelView.swift */; };
+		501F98171FB4546400364941 /* NameLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501F98161FB4546400364941 /* NameLabelView.swift */; };
 		506310C51FB18613009A594C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506310C41FB18613009A594C /* AppDelegate.swift */; };
-		506310C71FB18613009A594C /* TextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506310C61FB18613009A594C /* TextFieldViewController.swift */; };
+		506310C71FB18613009A594C /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506310C61FB18613009A594C /* LaunchViewController.swift */; };
 		506310CC1FB18613009A594C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 506310CB1FB18613009A594C /* Assets.xcassets */; };
 		506310D71FB196ED009A594C /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 506310D61FB196ED009A594C /* RxSwift.framework */; };
 		506310D81FB196ED009A594C /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 506310D61FB196ED009A594C /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		506310DC1FB196FA009A594C /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 506310DB1FB196FA009A594C /* RxCocoa.framework */; };
-		506310DF1FB1993B009A594C /* TextFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506310DE1FB1993B009A594C /* TextFieldViewModel.swift */; };
-		506310E11FB19978009A594C /* TextFieldViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 506310E01FB19978009A594C /* TextFieldViewController.storyboard */; };
-		506310EA1FB2C356009A594C /* MergeTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506310E91FB2C356009A594C /* MergeTextViewController.swift */; };
-		506310EC1FB2C36D009A594C /* MergeTextViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506310EB1FB2C36D009A594C /* MergeTextViewModel.swift */; };
-		506310F41FB2C487009A594C /* MergeTextViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 506310F31FB2C487009A594C /* MergeTextViewController.storyboard */; };
+		506310DF1FB1993B009A594C /* LaunchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506310DE1FB1993B009A594C /* LaunchViewModel.swift */; };
+		506310E11FB19978009A594C /* LaunchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 506310E01FB19978009A594C /* LaunchViewController.storyboard */; };
+		506310EA1FB2C356009A594C /* SelectColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506310E91FB2C356009A594C /* SelectColorViewController.swift */; };
+		506310EC1FB2C36D009A594C /* SelectColorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506310EB1FB2C36D009A594C /* SelectColorViewModel.swift */; };
+		506310F41FB2C487009A594C /* SelectColorViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 506310F31FB2C487009A594C /* SelectColorViewController.storyboard */; };
 		506310F61FB2C9D9009A594C /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506310F51FB2C9D9009A594C /* R.generated.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,21 +41,20 @@
 /* Begin PBXFileReference section */
 		05F20170A59B1D2F5A8EE8E1 /* Pods-RxSwiftSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwiftSample/Pods-RxSwiftSample.debug.xcconfig"; sourceTree = "<group>"; };
 		501F98121FB453A800364941 /* LabelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabelView.xib; sourceTree = "<group>"; };
-		501F98161FB4546400364941 /* TestLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLabelView.swift; sourceTree = "<group>"; };
+		501F98161FB4546400364941 /* NameLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameLabelView.swift; sourceTree = "<group>"; };
 		506310C11FB18613009A594C /* RxSwiftSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxSwiftSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		506310C41FB18613009A594C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		506310C61FB18613009A594C /* TextFieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldViewController.swift; sourceTree = "<group>"; };
+		506310C61FB18613009A594C /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		506310CB1FB18613009A594C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		506310D01FB18613009A594C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		506310D61FB196ED009A594C /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		506310DB1FB196FA009A594C /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
-		506310DE1FB1993B009A594C /* TextFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldViewModel.swift; sourceTree = "<group>"; };
-		506310E01FB19978009A594C /* TextFieldViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TextFieldViewController.storyboard; sourceTree = "<group>"; };
-		506310E91FB2C356009A594C /* MergeTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MergeTextViewController.swift; sourceTree = "<group>"; };
-		506310EB1FB2C36D009A594C /* MergeTextViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MergeTextViewModel.swift; sourceTree = "<group>"; };
-		506310F31FB2C487009A594C /* MergeTextViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MergeTextViewController.storyboard; sourceTree = "<group>"; };
+		506310DE1FB1993B009A594C /* LaunchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewModel.swift; sourceTree = "<group>"; };
+		506310E01FB19978009A594C /* LaunchViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchViewController.storyboard; sourceTree = "<group>"; };
+		506310E91FB2C356009A594C /* SelectColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectColorViewController.swift; sourceTree = "<group>"; };
+		506310EB1FB2C36D009A594C /* SelectColorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectColorViewModel.swift; sourceTree = "<group>"; };
+		506310F31FB2C487009A594C /* SelectColorViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectColorViewController.storyboard; sourceTree = "<group>"; };
 		506310F51FB2C9D9009A594C /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
-		506310F71FB2E2C6009A594C /* Once.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Once.framework; path = Carthage/Build/iOS/Once.framework; sourceTree = "<group>"; };
 		B2AF4CF78A2094981CBBC5E2 /* Pods-RxSwiftSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwiftSample/Pods-RxSwiftSample.release.xcconfig"; sourceTree = "<group>"; };
 		B6011E0BF8C47279B3DA2D56 /* Pods_RxSwiftSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwiftSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -77,7 +76,7 @@
 		501F980F1FB4516700364941 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				506310EB1FB2C36D009A594C /* MergeTextViewModel.swift */,
+				506310EB1FB2C36D009A594C /* SelectColorViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -85,7 +84,7 @@
 		501F98101FB4518800364941 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				506310DE1FB1993B009A594C /* TextFieldViewModel.swift */,
+				506310DE1FB1993B009A594C /* LaunchViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -93,7 +92,7 @@
 		501F98111FB4535000364941 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				501F98161FB4546400364941 /* TestLabelView.swift */,
+				501F98161FB4546400364941 /* NameLabelView.swift */,
 				501F98121FB453A800364941 /* LabelView.xib */,
 			);
 			path = View;
@@ -102,7 +101,6 @@
 		506310B81FB18613009A594C = {
 			isa = PBXGroup;
 			children = (
-				506310F71FB2E2C6009A594C /* Once.framework */,
 				506310D61FB196ED009A594C /* RxSwift.framework */,
 				506310C31FB18613009A594C /* RxSwiftSample */,
 				506310C21FB18613009A594C /* Products */,
@@ -124,8 +122,8 @@
 			children = (
 				506310C41FB18613009A594C /* AppDelegate.swift */,
 				506310F51FB2C9D9009A594C /* R.generated.swift */,
-				506310E41FB1C34E009A594C /* TextFieldView */,
-				506310E81FB2C2C0009A594C /* MergeTextView */,
+				506310E41FB1C34E009A594C /* LaunchView */,
+				506310E81FB2C2C0009A594C /* SelectColorView */,
 				506310CB1FB18613009A594C /* Assets.xcassets */,
 				506310D01FB18613009A594C /* Info.plist */,
 			);
@@ -141,25 +139,25 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		506310E41FB1C34E009A594C /* TextFieldView */ = {
+		506310E41FB1C34E009A594C /* LaunchView */ = {
 			isa = PBXGroup;
 			children = (
-				506310C61FB18613009A594C /* TextFieldViewController.swift */,
-				506310E01FB19978009A594C /* TextFieldViewController.storyboard */,
+				506310C61FB18613009A594C /* LaunchViewController.swift */,
+				506310E01FB19978009A594C /* LaunchViewController.storyboard */,
 				501F98101FB4518800364941 /* ViewModel */,
 			);
-			path = TextFieldView;
+			path = LaunchView;
 			sourceTree = "<group>";
 		};
-		506310E81FB2C2C0009A594C /* MergeTextView */ = {
+		506310E81FB2C2C0009A594C /* SelectColorView */ = {
 			isa = PBXGroup;
 			children = (
-				506310E91FB2C356009A594C /* MergeTextViewController.swift */,
-				506310F31FB2C487009A594C /* MergeTextViewController.storyboard */,
+				506310E91FB2C356009A594C /* SelectColorViewController.swift */,
+				506310F31FB2C487009A594C /* SelectColorViewController.storyboard */,
 				501F980F1FB4516700364941 /* ViewModel */,
 				501F98111FB4535000364941 /* View */,
 			);
-			path = MergeTextView;
+			path = SelectColorView;
 			sourceTree = "<group>";
 		};
 		E7EA3D2EFDF3B0A95CD2344F /* Pods */ = {
@@ -236,9 +234,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				506310E11FB19978009A594C /* TextFieldViewController.storyboard in Resources */,
+				506310E11FB19978009A594C /* LaunchViewController.storyboard in Resources */,
 				501F98131FB453A800364941 /* LabelView.xib in Resources */,
-				506310F41FB2C487009A594C /* MergeTextViewController.storyboard in Resources */,
+				506310F41FB2C487009A594C /* SelectColorViewController.storyboard in Resources */,
 				506310CC1FB18613009A594C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -334,12 +332,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				506310C71FB18613009A594C /* TextFieldViewController.swift in Sources */,
-				506310DF1FB1993B009A594C /* TextFieldViewModel.swift in Sources */,
-				506310EA1FB2C356009A594C /* MergeTextViewController.swift in Sources */,
+				506310C71FB18613009A594C /* LaunchViewController.swift in Sources */,
+				506310DF1FB1993B009A594C /* LaunchViewModel.swift in Sources */,
+				506310EA1FB2C356009A594C /* SelectColorViewController.swift in Sources */,
 				506310C51FB18613009A594C /* AppDelegate.swift in Sources */,
-				506310EC1FB2C36D009A594C /* MergeTextViewModel.swift in Sources */,
-				501F98171FB4546400364941 /* TestLabelView.swift in Sources */,
+				506310EC1FB2C36D009A594C /* SelectColorViewModel.swift in Sources */,
+				501F98171FB4546400364941 /* NameLabelView.swift in Sources */,
 				506310F61FB2C9D9009A594C /* R.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

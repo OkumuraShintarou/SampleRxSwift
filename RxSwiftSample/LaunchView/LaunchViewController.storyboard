@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Text Field View Controller-->
+        <!--Launch View Controller-->
         <scene sceneID="nvd-Q0-2XK">
             <objects>
-                <viewController storyboardIdentifier="TextFieldViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="K2q-1r-ia3" customClass="TextFieldViewController" customModule="RxSwiftSample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LaunchViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="K2q-1r-ia3" customClass="LaunchViewController" customModule="RxSwiftSample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rvY-Ft-3er">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

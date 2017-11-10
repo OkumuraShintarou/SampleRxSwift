@@ -36,8 +36,16 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 0 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 1 nibs.
   struct nib {
+    /// Nib `LabelView`.
+    static let labelView = _R.nib._LabelView()
+    
+    /// `UINib(name: "LabelView", in: bundle)`
+    static func labelView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.labelView)
+    }
+    
     fileprivate init() {}
   }
   
@@ -51,28 +59,21 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.storyboard` struct is generated, and contains static references to 3 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 2 storyboards.
   struct storyboard {
-    /// Storyboard `LaunchScreen`.
-    static let launchScreen = _R.storyboard.launchScreen()
-    /// Storyboard `MergeTextViewController`.
-    static let mergeTextViewController = _R.storyboard.mergeTextViewController()
-    /// Storyboard `TextFieldViewController`.
-    static let textFieldViewController = _R.storyboard.textFieldViewController()
+    /// Storyboard `LaunchViewController`.
+    static let launchViewController = _R.storyboard.launchViewController()
+    /// Storyboard `SelectColorViewController`.
+    static let selectColorViewController = _R.storyboard.selectColorViewController()
     
-    /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
-    static func launchScreen(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.launchScreen)
+    /// `UIStoryboard(name: "LaunchViewController", bundle: ...)`
+    static func launchViewController(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.launchViewController)
     }
     
-    /// `UIStoryboard(name: "MergeTextViewController", bundle: ...)`
-    static func mergeTextViewController(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.mergeTextViewController)
-    }
-    
-    /// `UIStoryboard(name: "TextFieldViewController", bundle: ...)`
-    static func textFieldViewController(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.textFieldViewController)
+    /// `UIStoryboard(name: "SelectColorViewController", bundle: ...)`
+    static func selectColorViewController(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.selectColorViewController)
     }
     
     fileprivate init() {}
@@ -102,53 +103,57 @@ struct _R: Rswift.Validatable {
   }
   
   struct nib {
+    struct _LabelView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "LabelView"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> NameLabelView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? NameLabelView
+      }
+      
+      fileprivate init() {}
+    }
+    
     fileprivate init() {}
   }
   
   struct storyboard: Rswift.Validatable {
     static func validate() throws {
-      try mergeTextViewController.validate()
-      try textFieldViewController.validate()
+      try launchViewController.validate()
+      try selectColorViewController.validate()
     }
     
-    struct launchScreen: Rswift.StoryboardResourceWithInitialControllerType {
-      typealias InitialController = UIKit.UIViewController
+    struct launchViewController: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = LaunchViewController
       
       let bundle = R.hostingBundle
-      let name = "LaunchScreen"
+      let launchViewController = StoryboardViewControllerResource<LaunchViewController>(identifier: "LaunchViewController")
+      let name = "LaunchViewController"
+      
+      func launchViewController(_: Void = ()) -> LaunchViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: launchViewController)
+      }
+      
+      static func validate() throws {
+        if _R.storyboard.launchViewController().launchViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'launchViewController' could not be loaded from storyboard 'LaunchViewController' as 'LaunchViewController'.") }
+      }
       
       fileprivate init() {}
     }
     
-    struct mergeTextViewController: Rswift.StoryboardResourceType, Rswift.Validatable {
-      let bundle = R.hostingBundle
-      let mergeTextViewController = StoryboardViewControllerResource<MergeTextViewController>(identifier: "MergeTextViewController")
-      let name = "MergeTextViewController"
+    struct selectColorViewController: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = SelectColorViewController
       
-      func mergeTextViewController(_: Void = ()) -> MergeTextViewController? {
+      let bundle = R.hostingBundle
+      let mergeTextViewController = StoryboardViewControllerResource<SelectColorViewController>(identifier: "MergeTextViewController")
+      let name = "SelectColorViewController"
+      
+      func mergeTextViewController(_: Void = ()) -> SelectColorViewController? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: mergeTextViewController)
       }
       
       static func validate() throws {
-        if _R.storyboard.mergeTextViewController().mergeTextViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'mergeTextViewController' could not be loaded from storyboard 'MergeTextViewController' as 'MergeTextViewController'.") }
-      }
-      
-      fileprivate init() {}
-    }
-    
-    struct textFieldViewController: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = TextFieldViewController
-      
-      let bundle = R.hostingBundle
-      let name = "TextFieldViewController"
-      let textFieldViewController = StoryboardViewControllerResource<TextFieldViewController>(identifier: "TextFieldViewController")
-      
-      func textFieldViewController(_: Void = ()) -> TextFieldViewController? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: textFieldViewController)
-      }
-      
-      static func validate() throws {
-        if _R.storyboard.textFieldViewController().textFieldViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'textFieldViewController' could not be loaded from storyboard 'TextFieldViewController' as 'TextFieldViewController'.") }
+        if _R.storyboard.selectColorViewController().mergeTextViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'mergeTextViewController' could not be loaded from storyboard 'SelectColorViewController' as 'SelectColorViewController'.") }
       }
       
       fileprivate init() {}
