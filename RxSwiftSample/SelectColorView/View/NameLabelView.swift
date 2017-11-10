@@ -14,7 +14,7 @@ final class NameLabelView: UIView {
     
     fileprivate let bag = DisposeBag()
     
-    fileprivate private(set) var vm = MergeTextViewModel()
+    fileprivate private(set) var vm = SelectColorViewModel()
     
     @IBOutlet fileprivate weak var helloLabel: UILabel!
     @IBOutlet fileprivate weak var nameLabel: UILabel!
@@ -25,8 +25,9 @@ final class NameLabelView: UIView {
     }
     
     // .xib自体の高さ、幅を指定
-    static func create() -> NameLabelView {
+    static func create(value: String) -> NameLabelView {
         let view = R.nib.labelView.firstView(owner: nil)!
+        view.vm.name = value
         view.frame.size.height = height()
         view.frame.size.width = UIScreen.main.bounds.width
         return view

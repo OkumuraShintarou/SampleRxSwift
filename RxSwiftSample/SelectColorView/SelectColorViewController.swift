@@ -12,18 +12,22 @@ import RxCocoa
 
 final class SelectColorViewController: UIViewController {
     
-    fileprivate private(set) var vm = MergeTextViewModel()
+    fileprivate private(set) var vm = SelectColorViewModel()
     
     fileprivate let bag = DisposeBag()
     
     fileprivate var helloLabel: NameLabelView!
     fileprivate var yourNameLabel: NameLabelView!
     
+    fileprivate var yourName = String()
+    
     @IBOutlet fileprivate weak var mergeView: UIView!
     
-    static func show(from: UIViewController) {
-        let vc = R.storyboard.selectColorViewController().instantiateInitialViewController()!
-        from.navigationController?.pushViewController(vc, animated: false)
+    static func show(from: UIViewController, value: String) {
+        let vc = R.storyboard.selectColorViewController().instantiateInitialViewController()! as? SelectColorViewController
+        guard let v = vc  else { return }
+        v.yourName = value
+        from.navigationController?.pushViewController(v, animated: false)
     }
     
     override func viewDidLoad() {
@@ -34,12 +38,13 @@ final class SelectColorViewController: UIViewController {
 }
 
 extension SelectColorViewController {
+    
     private func configureUI() {
         configureView()
     }
     
     private func configureView() {
-        helloLabel = NameLabelView.create()
+        helloLabel = NameLabelView.create(value: yourName)
         helloLabel.frame = CGRect(
             x: 0,
             y: 50,
@@ -47,14 +52,13 @@ extension SelectColorViewController {
             height: NameLabelView.height()
         )
         
-        yourNameLabel = NameLabelView.create()
+        yourNameLabel = NameLabelView.create(value: yourName)
         yourNameLabel.frame = CGRect(
             x: 0,
             y: 50,
             width: mergeView.frame.width,
             height: NameLabelView.height()
         )
-       // nameLabel.bindVM()
         yourNameLabel.configureLabel()
         mergeView.addSubview(yourNameLabel)
     }

@@ -76,13 +76,14 @@ extension LaunchViewController {
     
     private func showAlert(value: String) {
         let alert = UIAlertController (
-            title: "あなたが入力したもの",
+            title: "あなたの名前は",
             message: value,
             preferredStyle: .alert
         )
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler:{
             (action: UIAlertAction!) -> Void in
-            SelectColorViewController.show(from: self)
+            SelectColorViewController.show(from: self,value: value)
+            
         })
         )
         self.present(alert, animated: true, completion: nil)

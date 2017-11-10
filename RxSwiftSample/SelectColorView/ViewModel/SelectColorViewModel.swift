@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 
-final class MergeTextViewModel {
+final class SelectColorViewModel {
     fileprivate let bag = DisposeBag()
     
     let yourNameText$: Observable<String>
