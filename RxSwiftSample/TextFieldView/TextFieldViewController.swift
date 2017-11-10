@@ -14,7 +14,8 @@ final class TextFieldViewController: UIViewController {
     
     fileprivate let bag = DisposeBag()
     
-    fileprivate private(set) var vm = TextFieldViewModel()
+    fileprivate private(set) var tfVm = TextFieldViewModel()
+    fileprivate private(set) var mtVm = MergeTextViewModel()
     
     fileprivate var testLabelView: TestLabelView! //TestLabelViewのインスタンスを作成
     
@@ -49,8 +50,8 @@ extension TextFieldViewController {
             .subscribe(onNext: { [weak self] _ in
                 guard let wself = self else { return }
                 guard let text  =  wself.label.text else { return }
-                wself.vm.fetchedTextTrigger.onNext("\(text)")
-                MergeTextViewModel().fetchedTextTrigger.onNext("\(text)")
+                wself.tfVm.fetchedTextTrigger.onNext("\(text)")
+                wself.mtVm.fetchedTextTrigger.onNext("\(text)")
             })
             .disposed(by: bag)
     }
@@ -65,7 +66,7 @@ extension TextFieldViewController {
     }
     
     private func bindFromVM() {
-        vm
+        tfVm
             .fetchedText$
             .subscribe(onNext: { [weak self] value in
                 guard let wself = self else { return }

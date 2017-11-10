@@ -31,10 +31,6 @@ final class MergeTextViewController: UIViewController {
         configureUI()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        bindVM()
-    }
-    
 }
 
 extension MergeTextViewController {
@@ -62,13 +58,5 @@ extension MergeTextViewController {
         mergeView.addSubview(nameLabel)
     }
     
-    private func bindVM() {
-        vm.fechedText$
-            .subscribe(onNext: { [weak self] response in
-                guard let wself = self else { return }
-                wself.vm.name = response
-            })
-            .disposed(by: bag)
-    }
     
 }
