@@ -54,7 +54,7 @@ extension MergeTextViewController {
             width: mergeView.frame.width,
             height: TestLabelView.height()
         )
-        nameLabel.bindVM()
+       // nameLabel.bindVM()
         nameLabel.configureLabel()
         mergeView.addSubview(nameLabel)
     }

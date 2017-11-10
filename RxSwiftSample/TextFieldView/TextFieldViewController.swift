@@ -30,8 +30,8 @@ final class TextFieldViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         bindTextField()
-        bindFromVM()
         bindButtons()
+        bindFromVM()
         
     }
     
@@ -51,7 +51,7 @@ extension TextFieldViewController {
                 guard let wself = self else { return }
                 guard let text  =  wself.label.text else { return }
                 wself.tfVm.fetchedTextTrigger.onNext("\(text)")
-                wself.mtVm.fetchedTextTrigger.onNext("\(text)")
+                wself.mtVm.fetchedTextTrigger.onNext("fffff")
             })
             .disposed(by: bag)
     }
@@ -73,6 +73,14 @@ extension TextFieldViewController {
                 wself.showAlert(value: value)
             })
             .disposed(by: bag)
+        
+        mtVm.fechedText$
+            .subscribe(onNext: { [weak self] response in
+                guard let wself = self else { return }
+                wself.mtVm.name = response
+            })
+            .disposed(by: bag)
+        
     }
     
     private func showAlert(value: String) {

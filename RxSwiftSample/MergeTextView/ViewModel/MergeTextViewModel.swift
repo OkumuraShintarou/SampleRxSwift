@@ -25,6 +25,7 @@ final class MergeTextViewModel {
                 return Observable.just(t)
         }
         .share(replay: 1)
+
     
     }
 

@@ -33,21 +33,21 @@ final class TestLabelView: UIView {
         return view
     }
     
-    
-    func configureLabel(){
+    func configureLabel() {
         helloLabel.text = "Hello!!"
         nameLabel.text =  vm.name
         }
+    
 }
 
 extension TestLabelView {
-    func bindVM() {
-        vm.fechedText$
-            .subscribe(onNext: { [weak self] response in
-                guard let wself = self else { return }
-                wself.vm.name = response
-            })
-            .disposed(by: bag)
-    }
+//    func bindVM() {
+//        vm.fechedText$
+//            .subscribe(onNext: { [weak self] response in
+//                guard let wself = self else { return }
+//                wself.vm.name = response
+//            })
+//            .disposed(by: bag)
+//    }
 }
 
