@@ -22,12 +22,3 @@ Pods
 # Carthage
 Carthage
 
-# others
-*.swp
-!.gitkeep
-.DS_Store
-Inhouse.app.dSYM.zip
-fastlane/report.xml
-fastlane/files
-vendor
-fastlane/test_output

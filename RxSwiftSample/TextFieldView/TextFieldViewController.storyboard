@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="K2q-1r-ia3">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Text Field View Controller-->
+        <scene sceneID="nvd-Q0-2XK">
+            <objects>
+                <viewController storyboardIdentifier="TextFieldViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="K2q-1r-ia3" customClass="TextFieldViewController" customModule="RxSwiftSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rvY-Ft-3er">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="文字が表示されるよ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJV-Fb-0Vc">
+                                <rect key="frame" x="91" y="177" width="192" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="es2-Du-URD">
+                                <rect key="frame" x="91" y="343" width="192" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TxZ-Kw-eXk">
+                                <rect key="frame" x="91" y="427" width="192" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="次の画面へ"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.74564025430000003" green="0.74203812739999997" blue="0.74924238109999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="fJV-Fb-0Vc" firstAttribute="top" secondItem="ZO3-F3-eOb" secondAttribute="top" constant="157" id="0u8-BH-rBn"/>
+                            <constraint firstItem="fJV-Fb-0Vc" firstAttribute="leading" secondItem="es2-Du-URD" secondAttribute="leading" id="8nN-jy-RPA"/>
+                            <constraint firstItem="ZO3-F3-eOb" firstAttribute="bottom" secondItem="es2-Du-URD" secondAttribute="bottom" constant="294" id="GNM-5r-LjT"/>
+                            <constraint firstItem="fJV-Fb-0Vc" firstAttribute="leading" secondItem="ZO3-F3-eOb" secondAttribute="leading" constant="91" id="OS4-7D-BKz"/>
+                            <constraint firstItem="ZO3-F3-eOb" firstAttribute="bottom" secondItem="TxZ-Kw-eXk" secondAttribute="bottom" constant="204" id="XXK-yC-iA4"/>
+                            <constraint firstItem="TxZ-Kw-eXk" firstAttribute="trailing" secondItem="es2-Du-URD" secondAttribute="trailing" id="a8s-TA-d5T"/>
+                            <constraint firstItem="TxZ-Kw-eXk" firstAttribute="leading" secondItem="es2-Du-URD" secondAttribute="leading" id="fMJ-e0-Thy"/>
+                            <constraint firstItem="fJV-Fb-0Vc" firstAttribute="centerX" secondItem="rvY-Ft-3er" secondAttribute="centerX" id="riP-iP-2Xv"/>
+                            <constraint firstItem="fJV-Fb-0Vc" firstAttribute="trailing" secondItem="es2-Du-URD" secondAttribute="trailing" id="wxY-GD-sCf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ZO3-F3-eOb"/>
+                    </view>
+                    <connections>
+                        <outlet property="button" destination="TxZ-Kw-eXk" id="sc5-W4-6XI"/>
+                        <outlet property="label" destination="fJV-Fb-0Vc" id="nPR-Au-knu"/>
+                        <outlet property="textField" destination="es2-Du-URD" id="BhU-Il-3s2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gb0-Yn-lo7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="92" y="175.86206896551727"/>
+        </scene>
+    </scenes>
+</document>

@@ -16,7 +16,7 @@ struct R: Rswift.Validatable {
     try intern.validate()
   }
   
-  /// This `R.color` struct is generated, and contains static references to 0 colors.
+  /// This `R.color` struct is generated, and contains static references to 0 color palettes.
   struct color {
     fileprivate init() {}
   }
@@ -36,8 +36,16 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 0 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 1 nibs.
   struct nib {
+    /// Nib `LabelView`.
+    static let labelView = _R.nib._LabelView()
+    
+    /// `UINib(name: "LabelView", in: bundle)`
+    static func labelView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.labelView)
+    }
+    
     fileprivate init() {}
   }
   
@@ -53,19 +61,19 @@ struct R: Rswift.Validatable {
   
   /// This `R.storyboard` struct is generated, and contains static references to 2 storyboards.
   struct storyboard {
-    /// Storyboard `FirstViewController`.
-    static let firstViewController = _R.storyboard.firstViewController()
-    /// Storyboard `LaunchScreen`.
-    static let launchScreen = _R.storyboard.launchScreen()
+    /// Storyboard `MergeTextViewController`.
+    static let mergeTextViewController = _R.storyboard.mergeTextViewController()
+    /// Storyboard `TextFieldViewController`.
+    static let textFieldViewController = _R.storyboard.textFieldViewController()
     
-    /// `UIStoryboard(name: "FirstViewController", bundle: ...)`
-    static func firstViewController(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.firstViewController)
+    /// `UIStoryboard(name: "MergeTextViewController", bundle: ...)`
+    static func mergeTextViewController(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.mergeTextViewController)
     }
     
-    /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
-    static func launchScreen(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.launchScreen)
+    /// `UIStoryboard(name: "TextFieldViewController", bundle: ...)`
+    static func textFieldViewController(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.textFieldViewController)
     }
     
     fileprivate init() {}
@@ -95,37 +103,58 @@ struct _R: Rswift.Validatable {
   }
   
   struct nib {
-    fileprivate init() {}
-  }
-  
-  struct storyboard: Rswift.Validatable {
-    static func validate() throws {
-      try firstViewController.validate()
-    }
-    
-    struct firstViewController: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = TextFieldViewController
-      
+    struct _LabelView: Rswift.NibResourceType {
       let bundle = R.hostingBundle
-      let firstViewController = StoryboardViewControllerResource<TextFieldViewController>(identifier: "FirstViewController")
-      let name = "FirstViewController"
+      let name = "LabelView"
       
-      func firstViewController(_: Void = ()) -> TextFieldViewController? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: firstViewController)
-      }
-      
-      static func validate() throws {
-        if _R.storyboard.firstViewController().firstViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'firstViewController' could not be loaded from storyboard 'FirstViewController' as 'FirstViewController'.") }
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> TestLabelView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? TestLabelView
       }
       
       fileprivate init() {}
     }
     
-    struct launchScreen: Rswift.StoryboardResourceWithInitialControllerType {
-      typealias InitialController = UIKit.UIViewController
+    fileprivate init() {}
+  }
+  
+  struct storyboard: Rswift.Validatable {
+    static func validate() throws {
+      try mergeTextViewController.validate()
+      try textFieldViewController.validate()
+    }
+    
+    struct mergeTextViewController: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = MergeTextViewController
       
       let bundle = R.hostingBundle
-      let name = "LaunchScreen"
+      let mergeTextViewController = StoryboardViewControllerResource<MergeTextViewController>(identifier: "MergeTextViewController")
+      let name = "MergeTextViewController"
+      
+      func mergeTextViewController(_: Void = ()) -> MergeTextViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: mergeTextViewController)
+      }
+      
+      static func validate() throws {
+        if _R.storyboard.mergeTextViewController().mergeTextViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'mergeTextViewController' could not be loaded from storyboard 'MergeTextViewController' as 'MergeTextViewController'.") }
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct textFieldViewController: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = TextFieldViewController
+      
+      let bundle = R.hostingBundle
+      let name = "TextFieldViewController"
+      let textFieldViewController = StoryboardViewControllerResource<TextFieldViewController>(identifier: "TextFieldViewController")
+      
+      func textFieldViewController(_: Void = ()) -> TextFieldViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: textFieldViewController)
+      }
+      
+      static func validate() throws {
+        if _R.storyboard.textFieldViewController().textFieldViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'textFieldViewController' could not be loaded from storyboard 'TextFieldViewController' as 'TextFieldViewController'.") }
+      }
       
       fileprivate init() {}
     }
