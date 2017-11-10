@@ -50,6 +50,7 @@ extension TextFieldViewController {
                 guard let wself = self else { return }
                 guard let text  =  wself.label.text else { return }
                 wself.vm.fetchedTextTrigger.onNext("\(text)")
+                MergeTextViewModel().fetchedTextTrigger.onNext("\(text)")
             })
             .disposed(by: bag)
     }

@@ -12,9 +12,12 @@ import RxCocoa
 
 final class MergeTextViewController: UIViewController {
     
+    fileprivate private(set) var vm = MergeTextViewModel()
+    
     fileprivate let bag = DisposeBag()
     
-    fileprivate var testLabelView: TestLabelView!
+    fileprivate var helloLabel: TestLabelView!
+    fileprivate var nameLabel: TestLabelView!
     
     @IBOutlet fileprivate weak var mergeView: UIView!
     
@@ -28,23 +31,44 @@ final class MergeTextViewController: UIViewController {
         configureUI()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        bindVM()
+    }
+    
 }
 
 extension MergeTextViewController {
     private func configureUI() {
         configureView()
-        
     }
     
     private func configureView() {
-        testLabelView = TestLabelView.create()
-        testLabelView.frame = CGRect(
+        helloLabel = TestLabelView.create()
+        helloLabel.frame = CGRect(
             x: 0,
             y: 50,
             width: mergeView.frame.width, // mergeViewの幅に大きさを合わせる
             height: TestLabelView.height()
         )
-        mergeView.addSubview(testLabelView)
+        mergeView.addSubview(helloLabel)
+        
+        nameLabel = TestLabelView.create()
+        nameLabel.frame = CGRect(
+            x: 0,
+            y: 50,
+            width: mergeView.frame.width,
+            height: TestLabelView.height()
+        )
+        mergeView.addSubview(nameLabel)
+    }
+    
+    private func bindVM() {
+        vm.fechedText$
+            .subscribe(onNext: { [weak self] response in
+                guard let wself = self else { return }
+                wself.vm.name = response
+            })
+            .disposed(by: bag)
     }
     
 }

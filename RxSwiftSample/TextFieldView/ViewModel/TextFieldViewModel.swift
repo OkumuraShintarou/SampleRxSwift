@@ -24,5 +24,4 @@ final class TextFieldViewModel {
             }
             .share(replay: 1)
         }
-    
 }

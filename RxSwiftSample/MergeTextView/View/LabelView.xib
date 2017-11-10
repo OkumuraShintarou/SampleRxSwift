@@ -16,24 +16,35 @@
             <rect key="frame" x="0.0" y="0.0" width="410" height="40"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oj5-Iu-prb">
-                    <rect key="frame" x="45" y="8" width="319" height="23"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oj5-Iu-prb">
+                    <rect key="frame" x="45" y="8" width="161" height="23"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CBi-N7-gXd">
+                    <rect key="frame" x="225" y="8" width="161" height="23"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="27"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="oj5-Iu-prb" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="8" id="Eb5-g7-wd7"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="oj5-Iu-prb" secondAttribute="bottom" constant="9" id="WOs-MQ-K3M"/>
-                <constraint firstItem="oj5-Iu-prb" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="45" id="sPY-d7-gI8"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="oj5-Iu-prb" secondAttribute="trailing" constant="46" id="y2H-J6-iQZ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="oj5-Iu-prb" secondAttribute="bottom" constant="9" id="2Hh-Sm-Oac"/>
+                <constraint firstItem="CBi-N7-gXd" firstAttribute="leading" secondItem="oj5-Iu-prb" secondAttribute="trailing" constant="19" id="7Zh-hp-88f"/>
+                <constraint firstItem="CBi-N7-gXd" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="8" id="NpU-ln-gf0"/>
+                <constraint firstItem="oj5-Iu-prb" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="8" id="eC1-fu-JuS"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="CBi-N7-gXd" secondAttribute="bottom" constant="9" id="hsV-IZ-ZS8"/>
+                <constraint firstItem="oj5-Iu-prb" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="45" id="sf9-7X-bg6"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="CBi-N7-gXd" secondAttribute="trailing" constant="24" id="u9h-QU-Ilt"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="oj5-Iu-prb" secondAttribute="trailing" constant="204" id="x5d-nG-MmV"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
-                <outlet property="mergeLabel" destination="oj5-Iu-prb" id="TEN-zW-izG"/>
+                <outlet property="helloLabel" destination="oj5-Iu-prb" id="a8J-Gz-5Gz"/>
+                <outlet property="nameLabel" destination="CBi-N7-gXd" id="gYN-ng-WHe"/>
             </connections>
             <point key="canvasLocation" x="-2322" y="-629"/>
         </view>

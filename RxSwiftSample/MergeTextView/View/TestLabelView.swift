@@ -12,7 +12,13 @@ import RxCocoa
 
 final class TestLabelView: UIView {
     
-    @IBOutlet fileprivate weak var mergeLabel: UILabel!
+    fileprivate let bag = DisposeBag()
+    
+    fileprivate private(set) var vm = MergeTextViewModel()
+    
+    @IBOutlet fileprivate weak var helloLabel: UILabel!
+    @IBOutlet fileprivate weak var nameLabel: UILabel!
+    
     
     static func height() -> CGFloat {
         return 20
@@ -32,6 +38,8 @@ final class TestLabelView: UIView {
     }
     
     func configureLabel(){
-        mergeLabel.text = "コンバンワ"
-    }
+        helloLabel.text = "Hello!!"
+        nameLabel.text = vm.name
+        }
 }
+
