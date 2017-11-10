@@ -50,7 +50,6 @@ extension TextFieldViewController {
                 guard let wself = self else { return }
                 guard let text  =  wself.label.text else { return }
                 wself.vm.fetchedTextTrigger.onNext("\(text)")
-                MergeTextViewController.show(from: wself)
             })
             .disposed(by: bag)
     }
@@ -69,8 +68,23 @@ extension TextFieldViewController {
             .fetchedText$
             .subscribe(onNext: { [weak self] value in
                 guard let wself = self else { return }
-                guard let t = wself.testLabelView else { return }
+                wself.showAlert(value: value)
             })
             .disposed(by: bag)
     }
+    
+    private func showAlert(value: String) {
+        let alert = UIAlertController (
+            title: "あなたが入力したもの",
+            message: value,
+            preferredStyle: .alert
+        )
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler:{
+            (action: UIAlertAction!) -> Void in
+            MergeTextViewController.show(from: self)
+        })
+        )
+        self.present(alert, animated: true, completion: nil)
+    }
+    
 }

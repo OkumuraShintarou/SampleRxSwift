@@ -37,13 +37,12 @@ extension MergeTextViewController {
     }
     
     private func configureView() {
-        testLabelView = TestLabelView.create() //testLabelViewにViewを作成
+        testLabelView = TestLabelView.create()
         testLabelView.frame = CGRect(
             x: 0,
             y: 50,
-            width: mergeView.frame.width,
-            height: TestLabelView.height() //ここようわからん
-            // x: 0, y: 50の所に幅はmerfgeViewに合わせ、高さはheight()の所にカスタムビューを置くよ
+            width: mergeView.frame.width, // mergeViewの幅に大きさを合わせる
+            height: TestLabelView.height()
         )
         mergeView.addSubview(testLabelView)
     }

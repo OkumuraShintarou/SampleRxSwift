@@ -18,12 +18,11 @@ final class TextFieldViewModel {
     let fetchedTextTrigger = PublishSubject<String>()
     
     init() {
-        
         fetchedText$ = fetchedTextTrigger
             .flatMap{ s -> Observable<String> in
-               return Observable.just(s)
+                return Observable.just(s)
+            }
+            .share(replay: 1)
         }
-        .share(replay: 1)
-    }
     
 }

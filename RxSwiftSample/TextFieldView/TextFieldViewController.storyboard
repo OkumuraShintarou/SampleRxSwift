@@ -36,7 +36,7 @@
                                 <state key="normal" title="次の画面へ"/>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.63854486899999996" green="1" blue="0.69980512780000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.74564025430000003" green="0.74203812739999997" blue="0.74924238109999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="fJV-Fb-0Vc" firstAttribute="top" secondItem="ZO3-F3-eOb" secondAttribute="top" constant="157" id="0u8-BH-rBn"/>
                             <constraint firstItem="fJV-Fb-0Vc" firstAttribute="leading" secondItem="es2-Du-URD" secondAttribute="leading" id="8nN-jy-RPA"/>
