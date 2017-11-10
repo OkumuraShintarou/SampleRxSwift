@@ -16,6 +16,8 @@ final class TextFieldViewController: UIViewController {
     
     fileprivate private(set) var vm = TextFieldViewModel()
     
+    fileprivate var testLabelView: TestLabelView! //TestLabelViewのインスタンスを作成
+    
     static func vc() -> UIViewController {
         return R.storyboard.textFieldViewController().instantiateInitialViewController()!
     }
@@ -29,7 +31,7 @@ final class TextFieldViewController: UIViewController {
         bindTextField()
         bindFromVM()
         bindButtons()
-
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -40,15 +42,15 @@ final class TextFieldViewController: UIViewController {
 extension TextFieldViewController {
     
     private func bindButtons() {
-        
         button
-        .rx.tap
-        .throttle(0.7, latest: false, scheduler: MainScheduler.instance)
+            .rx
+            .tap
+            .throttle(0.7, latest: false, scheduler: MainScheduler.instance)
             .subscribe(onNext: { [weak self] _ in
                 guard let wself = self else { return }
                 guard let text  =  wself.label.text else { return }
                 wself.vm.fetchedTextTrigger.onNext("\(text)")
-
+                MergeTextViewController.show(from: wself)
             })
             .disposed(by: bag)
     }
@@ -63,11 +65,11 @@ extension TextFieldViewController {
     }
     
     private func bindFromVM() {
-        
         vm
             .fetchedText$
             .subscribe(onNext: { [weak self] value in
                 guard let wself = self else { return }
+                guard let t = wself.testLabelView else { return }
             })
             .disposed(by: bag)
     }

@@ -1,3 +1,6 @@
+## What
+- RxSwiftやR.Swift,CustomView等を取り入れた自己満サンプル
+
 ## AppName
 - RxSwiftSample
 

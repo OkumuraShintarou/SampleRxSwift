@@ -15,21 +15,23 @@ final class TestLabelView: UIView {
     @IBOutlet fileprivate weak var mergeLabel: UILabel!
     
     static func height() -> CGFloat {
-        return 21
+        return 120
     }
     
+    // .xib自体の高さ、幅を指定
     static func create() -> TestLabelView {
         let view = R.nib.labelView.firstView(owner: nil)! // nib.labelViewというのは.xibファイルのこと。.xibファイルのViewを作成している
-        view.frame.size.height = height() // そのViewの高さを指定
-        view.frame.size.width = UIScreen.main.bounds.width // viewの幅. addSubViewする幅に合わせてくれる
+        view.frame.size.height = height() // .xibの高さを指定。addSubviewした時の高さ？？
+        view.frame.size.width = UIScreen.main.bounds.width // labelの幅は、画面サイズの幅に合わせるよ。デバイスの幅サイズを取得している
         return view
     }
     
     override func awakeFromNib() {
         super.awakeFromNib() // Viewが作られた後に呼ばれる
+        configureLabel()
     }
     
-    func configureLabel(value: String) {
-        mergeLabel.text = value
+    func configureLabel(){
+        mergeLabel.text = "コンバンワ"
     }
 }

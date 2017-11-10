@@ -36,8 +36,16 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 0 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 1 nibs.
   struct nib {
+    /// Nib `LabelView`.
+    static let labelView = _R.nib._LabelView()
+    
+    /// `UINib(name: "LabelView", in: bundle)`
+    static func labelView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.labelView)
+    }
+    
     fileprivate init() {}
   }
   
@@ -51,19 +59,12 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.storyboard` struct is generated, and contains static references to 3 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 2 storyboards.
   struct storyboard {
-    /// Storyboard `LaunchScreen`.
-    static let launchScreen = _R.storyboard.launchScreen()
     /// Storyboard `MergeTextViewController`.
     static let mergeTextViewController = _R.storyboard.mergeTextViewController()
     /// Storyboard `TextFieldViewController`.
     static let textFieldViewController = _R.storyboard.textFieldViewController()
-    
-    /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
-    static func launchScreen(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.launchScreen)
-    }
     
     /// `UIStoryboard(name: "MergeTextViewController", bundle: ...)`
     static func mergeTextViewController(_: Void = ()) -> UIKit.UIStoryboard {
@@ -102,6 +103,17 @@ struct _R: Rswift.Validatable {
   }
   
   struct nib {
+    struct _LabelView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "LabelView"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> TestLabelView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? TestLabelView
+      }
+      
+      fileprivate init() {}
+    }
+    
     fileprivate init() {}
   }
   
@@ -109,15 +121,6 @@ struct _R: Rswift.Validatable {
     static func validate() throws {
       try mergeTextViewController.validate()
       try textFieldViewController.validate()
-    }
-    
-    struct launchScreen: Rswift.StoryboardResourceWithInitialControllerType {
-      typealias InitialController = UIKit.UIViewController
-      
-      let bundle = R.hostingBundle
-      let name = "LaunchScreen"
-      
-      fileprivate init() {}
     }
     
     struct mergeTextViewController: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {

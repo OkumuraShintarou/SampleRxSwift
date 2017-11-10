@@ -12,7 +12,11 @@ import RxCocoa
 
 final class MergeTextViewController: UIViewController {
     
-    var text = String()
+    fileprivate let bag = DisposeBag()
+    
+    fileprivate var testLabelView: TestLabelView!
+    
+    @IBOutlet fileprivate weak var mergeView: UIView!
     
     static func show(from: UIViewController) {
         let vc = R.storyboard.mergeTextViewController().instantiateInitialViewController()!
@@ -21,8 +25,27 @@ final class MergeTextViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureUI()
+    }
+    
+}
 
-        // Do any additional setup after loading the view.
+extension MergeTextViewController {
+    private func configureUI() {
+        configureView()
+        
+    }
+    
+    private func configureView() {
+        testLabelView = TestLabelView.create() //testLabelViewにViewを作成
+        testLabelView.frame = CGRect(
+            x: 0,
+            y: 50,
+            width: mergeView.frame.width,
+            height: TestLabelView.height() //ここようわからん
+            // x: 0, y: 50の所に幅はmerfgeViewに合わせ、高さはheight()の所にカスタムビューを置くよ
+        )
+        mergeView.addSubview(testLabelView)
     }
     
 }

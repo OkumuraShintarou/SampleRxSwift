@@ -31,7 +31,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TxZ-Kw-eXk">
-                                <rect key="frame" x="91" y="484" width="192" height="36"/>
+                                <rect key="frame" x="91" y="427" width="192" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="次の画面へ"/>
                             </button>
@@ -42,7 +42,7 @@
                             <constraint firstItem="fJV-Fb-0Vc" firstAttribute="leading" secondItem="es2-Du-URD" secondAttribute="leading" id="8nN-jy-RPA"/>
                             <constraint firstItem="ZO3-F3-eOb" firstAttribute="bottom" secondItem="es2-Du-URD" secondAttribute="bottom" constant="294" id="GNM-5r-LjT"/>
                             <constraint firstItem="fJV-Fb-0Vc" firstAttribute="leading" secondItem="ZO3-F3-eOb" secondAttribute="leading" constant="91" id="OS4-7D-BKz"/>
-                            <constraint firstItem="ZO3-F3-eOb" firstAttribute="bottom" secondItem="TxZ-Kw-eXk" secondAttribute="bottom" constant="147" id="TXQ-Yu-xC8"/>
+                            <constraint firstItem="ZO3-F3-eOb" firstAttribute="bottom" secondItem="TxZ-Kw-eXk" secondAttribute="bottom" constant="204" id="XXK-yC-iA4"/>
                             <constraint firstItem="TxZ-Kw-eXk" firstAttribute="trailing" secondItem="es2-Du-URD" secondAttribute="trailing" id="a8s-TA-d5T"/>
                             <constraint firstItem="TxZ-Kw-eXk" firstAttribute="leading" secondItem="es2-Du-URD" secondAttribute="leading" id="fMJ-e0-Thy"/>
                             <constraint firstItem="fJV-Fb-0Vc" firstAttribute="centerX" secondItem="rvY-Ft-3er" secondAttribute="centerX" id="riP-iP-2Xv"/>
