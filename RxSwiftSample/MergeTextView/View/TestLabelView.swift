@@ -25,22 +25,18 @@ final class TestLabelView: UIView {
     }
     
     // .xib自体の高さ、幅を指定
-    static func create() -> TestLabelView {
+    static func create(_ vm: MergeTextViewModel) -> TestLabelView {
         let view = R.nib.labelView.firstView(owner: nil)!
-        view.frame.size.height = height()
+        //view.frame.size.height = height()
+        view.vm = vm
         view.frame.size.width = UIScreen.main.bounds.width
         return view
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        configureLabel()
-    }
     
     func configureLabel(){
         helloLabel.text = "Hello!!"
-        bindVM()
-        nameLabel.text = vm.name
+        nameLabel.text =  vm.name
         }
 }
 
