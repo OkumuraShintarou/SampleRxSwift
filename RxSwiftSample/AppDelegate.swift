@@ -24,7 +24,7 @@ extension AppDelegate {
     // RootViewControllerを指定
     func configureWindow() {
         window?.frame = UIScreen.main.bounds
-        window?.rootViewController = UINavigationController(rootViewController: TextFieldViewController.vc())
+        window?.rootViewController = UINavigationController(rootViewController: LaunchViewController.vc())
         window?.backgroundColor = .white
         window?.makeKeyAndVisible()
     }
