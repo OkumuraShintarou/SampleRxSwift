@@ -14,7 +14,7 @@ final class NameLabelView: UIView {
     
     fileprivate let bag = DisposeBag()
     
-    fileprivate private(set) var vm = SelectColorViewModel()
+    fileprivate private(set) var vm = SelectColorViewModel() // 先にインスタンスを作成しておく
     
     @IBOutlet fileprivate weak var helloLabel: UILabel!
     @IBOutlet fileprivate weak var nameLabel: UILabel!
@@ -26,7 +26,7 @@ final class NameLabelView: UIView {
     
     // .xib自体の高さ、幅を指定
     static func create(value: String) -> NameLabelView {
-        let view = R.nib.labelView.firstView(owner: nil)!
+        let view = R.nib.labelView.firstView(owner: nil)! // ここでLabelView.xibがviewに格納される。このlabelviewと紐づいているのはNameLabelViewクラスだから,/viewが生成されるタイミングでNameLabelViewクラスのプロパティが参照できる
         view.vm.name = value
         view.frame.size.height = height()
         view.frame.size.width = UIScreen.main.bounds.width

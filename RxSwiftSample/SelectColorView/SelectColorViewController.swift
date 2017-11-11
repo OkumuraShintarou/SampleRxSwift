@@ -12,14 +12,12 @@ import RxCocoa
 
 final class SelectColorViewController: UIViewController {
     
-    fileprivate private(set) var vm = SelectColorViewModel()
-    
     fileprivate let bag = DisposeBag()
+    
+    fileprivate var yourName = String()
     
     fileprivate var helloLabel: NameLabelView!
     fileprivate var yourNameLabel: NameLabelView!
-    
-    fileprivate var yourName = String()
     
     @IBOutlet fileprivate weak var mergeView: UIView!
     
