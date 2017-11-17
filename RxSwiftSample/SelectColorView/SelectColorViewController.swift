@@ -16,10 +16,15 @@ final class SelectColorViewController: UIViewController {
     
     fileprivate var yourName = String()
     
-    fileprivate var helloLabel: NameLabelView!
-    fileprivate var yourNameLabel: NameLabelView!
+    fileprivate private(set) var setColorView = SelectColorView()
+    fileprivate private(set) var vm           = SelectColorViewModel()
     
-    @IBOutlet fileprivate weak var mergeView: UIView!
+    fileprivate var helloLabel       : NameLabelView!
+    fileprivate var yourNameLabel    : NameLabelView!
+    fileprivate var likeColorButtons : SelectColorView!
+    
+    @IBOutlet fileprivate weak var mergeView      : UIView!
+    @IBOutlet fileprivate weak var mergeButtonView: UIView!
     
     static func show(from: UIViewController, value: String) {
         let vc = R.storyboard.selectColorViewController().instantiateInitialViewController()! as? SelectColorViewController
@@ -57,9 +62,21 @@ extension SelectColorViewController {
             width: mergeView.frame.width,
             height: NameLabelView.height()
         )
-        yourNameLabel.configureLabel()
+        
+        likeColorButtons = SelectColorView.create(vm: vm) // likeColorButtonsにviewを作成
+        likeColorButtons.frame = CGRect(
+            x: 0,
+            y: 0,
+            width: mergeButtonView.frame.width,
+            height: SelectColorView.height() // 高さを指定
+        )
+        
+        yourNameLabel.configureLabel() // 名前を表示
         mergeView.addSubview(yourNameLabel)
+        mergeButtonView.addSubview(likeColorButtons)
     }
     
+    private func bindButtons() {
+    }
     
 }

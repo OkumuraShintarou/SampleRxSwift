@@ -36,14 +36,21 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 1 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 2 nibs.
   struct nib {
     /// Nib `LabelView`.
     static let labelView = _R.nib._LabelView()
+    /// Nib `SelectColorView`.
+    static let selectColorView = _R.nib._SelectColorView()
     
     /// `UINib(name: "LabelView", in: bundle)`
     static func labelView(_: Void = ()) -> UIKit.UINib {
       return UIKit.UINib(resource: R.nib.labelView)
+    }
+    
+    /// `UINib(name: "SelectColorView", in: bundle)`
+    static func selectColorView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.selectColorView)
     }
     
     fileprivate init() {}
@@ -109,6 +116,17 @@ struct _R: Rswift.Validatable {
       
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> NameLabelView? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? NameLabelView
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct _SelectColorView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "SelectColorView"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> SelectColorView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? SelectColorView
       }
       
       fileprivate init() {}

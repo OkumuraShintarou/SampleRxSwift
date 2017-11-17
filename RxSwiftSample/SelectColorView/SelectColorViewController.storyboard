@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jez-SK-vmt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jez-SK-vmt">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,20 +19,34 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0DW-Wr-1A1">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="154"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="154" id="Te6-Ng-ssh"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ep7-kh-RFG">
+                                <rect key="frame" x="0.0" y="162" width="375" height="364"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="364" id="0oF-FQ-AMe"/>
+                                    <constraint firstAttribute="width" constant="375" id="1ww-7b-hDg"/>
+                                </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="0DW-Wr-1A1" firstAttribute="bottom" secondItem="i2h-pM-OtI" secondAttribute="bottom" id="AZb-Dt-Fvr"/>
+                            <constraint firstItem="0DW-Wr-1A1" firstAttribute="leading" secondItem="i2h-pM-OtI" secondAttribute="leading" id="Ikn-NX-sof"/>
                             <constraint firstItem="0DW-Wr-1A1" firstAttribute="top" secondItem="Z6f-qS-5Xf" secondAttribute="top" id="LUU-m2-n6g"/>
                             <constraint firstItem="0DW-Wr-1A1" firstAttribute="leading" secondItem="Z6f-qS-5Xf" secondAttribute="leading" id="MtR-Dg-exC"/>
+                            <constraint firstItem="ep7-kh-RFG" firstAttribute="trailing" secondItem="i2h-pM-OtI" secondAttribute="trailing" id="OMf-xU-KdR"/>
+                            <constraint firstItem="ep7-kh-RFG" firstAttribute="top" secondItem="0DW-Wr-1A1" secondAttribute="bottom" constant="8" id="Qfs-M6-VPJ"/>
+                            <constraint firstItem="ep7-kh-RFG" firstAttribute="leading" secondItem="i2h-pM-OtI" secondAttribute="leading" id="Que-UE-FIC"/>
                             <constraint firstAttribute="trailing" secondItem="0DW-Wr-1A1" secondAttribute="trailing" id="aOE-bY-w0q"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="i2h-pM-OtI"/>
                     </view>
                     <connections>
+                        <outlet property="mergeButtonView" destination="ep7-kh-RFG" id="vF7-6o-jmn"/>
                         <outlet property="mergeView" destination="0DW-Wr-1A1" id="Cvp-8S-fMf"/>
                     </connections>
                 </viewController>
