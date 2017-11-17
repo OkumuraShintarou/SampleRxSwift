@@ -22,6 +22,8 @@
 		506310EC1FB2C36D009A594C /* SelectColorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506310EB1FB2C36D009A594C /* SelectColorViewModel.swift */; };
 		506310F41FB2C487009A594C /* SelectColorViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 506310F31FB2C487009A594C /* SelectColorViewController.storyboard */; };
 		506310F61FB2C9D9009A594C /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506310F51FB2C9D9009A594C /* R.generated.swift */; };
+		50FDC8FA1FB75B9E00BD6CFF /* SelectColorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50FDC8F91FB75B9E00BD6CFF /* SelectColorView.xib */; };
+		50FDC8FC1FB75D3B00BD6CFF /* SelectColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FDC8FB1FB75D3B00BD6CFF /* SelectColorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -55,6 +57,8 @@
 		506310EB1FB2C36D009A594C /* SelectColorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectColorViewModel.swift; sourceTree = "<group>"; };
 		506310F31FB2C487009A594C /* SelectColorViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectColorViewController.storyboard; sourceTree = "<group>"; };
 		506310F51FB2C9D9009A594C /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		50FDC8F91FB75B9E00BD6CFF /* SelectColorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectColorView.xib; sourceTree = "<group>"; };
+		50FDC8FB1FB75D3B00BD6CFF /* SelectColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectColorView.swift; sourceTree = "<group>"; };
 		B2AF4CF78A2094981CBBC5E2 /* Pods-RxSwiftSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftSample.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwiftSample/Pods-RxSwiftSample.release.xcconfig"; sourceTree = "<group>"; };
 		B6011E0BF8C47279B3DA2D56 /* Pods_RxSwiftSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwiftSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -94,6 +98,8 @@
 			children = (
 				501F98161FB4546400364941 /* NameLabelView.swift */,
 				501F98121FB453A800364941 /* LabelView.xib */,
+				50FDC8FB1FB75D3B00BD6CFF /* SelectColorView.swift */,
+				50FDC8F91FB75B9E00BD6CFF /* SelectColorView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -237,6 +243,7 @@
 				506310E11FB19978009A594C /* LaunchViewController.storyboard in Resources */,
 				501F98131FB453A800364941 /* LabelView.xib in Resources */,
 				506310F41FB2C487009A594C /* SelectColorViewController.storyboard in Resources */,
+				50FDC8FA1FB75B9E00BD6CFF /* SelectColorView.xib in Resources */,
 				506310CC1FB18613009A594C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -334,6 +341,7 @@
 			files = (
 				506310C71FB18613009A594C /* LaunchViewController.swift in Sources */,
 				506310DF1FB1993B009A594C /* LaunchViewModel.swift in Sources */,
+				50FDC8FC1FB75D3B00BD6CFF /* SelectColorView.swift in Sources */,
 				506310EA1FB2C356009A594C /* SelectColorViewController.swift in Sources */,
 				506310C51FB18613009A594C /* AppDelegate.swift in Sources */,
 				506310EC1FB2C36D009A594C /* SelectColorViewModel.swift in Sources */,

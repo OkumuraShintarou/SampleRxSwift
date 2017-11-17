@@ -19,16 +19,11 @@ final class SelectColorViewModel {
     var name = String()
     
     init() {
-        
         yourNameText$ = yourNameTextTrigger
             .flatMap { t -> Observable<String> in
                 return Observable.just(t)
         }
         .share(replay: 1)
 
-    
     }
-
-    
-    
 }

@@ -21,13 +21,13 @@ final class NameLabelView: UIView {
     
     
     static func height() -> CGFloat {
-        return 20
+        return 50
     }
     
     // .xib自体の高さ、幅を指定
     static func create(value: String) -> NameLabelView {
-        let view = R.nib.labelView.firstView(owner: nil)! // ここでLabelView.xibがviewに格納される。このlabelviewと紐づいているのはNameLabelViewクラスだから,/viewが生成されるタイミングでNameLabelViewクラスのプロパティが参照できる
-        view.vm.name = value
+        let view = R.nib.labelView.firstView(owner: nil)! // ここでLabelView.xibがviewに格納される。このlabelviewと紐づいているのはNameLabelViewクラスだから,viewが生成されるタイミングでNameLabelViewクラスのプロパティが参照できる。ここでvmのインスタンスが作成される
+        view.vm.name = value 
         view.frame.size.height = height()
         view.frame.size.width = UIScreen.main.bounds.width
         return view

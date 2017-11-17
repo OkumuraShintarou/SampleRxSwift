@@ -14,6 +14,9 @@ final class LaunchViewController: UIViewController {
     
     fileprivate let bag = DisposeBag()
     
+    // fileprivateは同一ファイルのみから参照できる
+    // private(set)setterのみprivate(クラス内だけ呼び出せる)
+    // まとめ: 同一ファイルからのみアクセスできる且つ、vmを呼び出す時はこのクラス内からのみ呼び出せる
     fileprivate private(set) var vm = TextFieldViewModel()
     
     fileprivate var testLabelView: NameLabelView! //TestLabelViewのインスタンスを作成
@@ -71,7 +74,6 @@ extension LaunchViewController {
                 wself.showAlert(value: value)
             })
             .disposed(by: bag)
-        
     }
     
     private func showAlert(value: String) {
@@ -83,10 +85,11 @@ extension LaunchViewController {
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler:{
             (action: UIAlertAction!) -> Void in
             SelectColorViewController.show(from: self,value: value)
-            
+         
         })
         )
         self.present(alert, animated: true, completion: nil)
     }
-    
+
 }
+
