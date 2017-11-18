@@ -21,7 +21,7 @@ final class SelectColorViewController: UIViewController {
     
     fileprivate var helloLabel       : NameLabelView!
     fileprivate var yourNameLabel    : NameLabelView!
-    fileprivate var likeColorButtons : SelectColorView!
+    fileprivate var selectColorView : SelectColorView!
     
     @IBOutlet fileprivate weak var mergeView      : UIView!
     @IBOutlet fileprivate weak var mergeButtonView: UIView!
@@ -36,6 +36,7 @@ final class SelectColorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        bindButtons()
     }
     
 }
@@ -63,8 +64,8 @@ extension SelectColorViewController {
             height: NameLabelView.height()
         )
         
-        likeColorButtons = SelectColorView.create(vm: vm) // likeColorButtonsにviewを作成
-        likeColorButtons.frame = CGRect(
+        selectColorView = SelectColorView.create(vm: vm) // likeColorButtonsにviewを作成
+        selectColorView.frame = CGRect(
             x: 0,
             y: 0,
             width: mergeButtonView.frame.width,
@@ -73,10 +74,41 @@ extension SelectColorViewController {
         
         yourNameLabel.configureLabel() // 名前を表示
         mergeView.addSubview(yourNameLabel)
-        mergeButtonView.addSubview(likeColorButtons)
+        mergeButtonView.addSubview(selectColorView)
     }
     
     private func bindButtons() {
+        
+        selectColorView
+            .redButtonTaps
+            .subscribe(onNext: { [weak self]  in
+                guard let wself = self else { return }
+    
+        })
+        .disposed(by: bag)
+        
+        selectColorView
+            .blueButtonTaps
+            .subscribe(onNext: { [weak self]  in
+                guard let wself = self else { return }
+                
+        })
+        .disposed(by: bag)
+        
+        selectColorView
+            .yellowButtonTaps
+            .subscribe(onNext: { [weak self] in
+                guard let wself = self else { return }
+                
+        })
+            .disposed(by: bag)
+        selectColorView
+            .greenButtonTaps
+            .subscribe(onNext: { [weak self] in
+                guard let wself = self else { return }
+                
+            })
+        
     }
     
 }
