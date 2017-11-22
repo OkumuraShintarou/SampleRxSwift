@@ -55,7 +55,7 @@ fileprivate extension SelectColorView {
     func bindButtons() {
         // バインドされた時にVCでsubscribeしておいて、挙動を記述する
         // configureで呼ぶことによって、createされたタイミングでボタンの挙動を記述できる
-        // ボタンをタップするとresbuttonsにバインドされる。
+        // ボタンをタップするとredbuttontapsにバインドされるという挙動をvmを作成した時にかく
         
         redButton.rx
             .tap
