@@ -26,7 +26,6 @@ final class SelectColorViewController: UIViewController {
     
     @IBOutlet fileprivate weak var mergeView      : UIView!
     @IBOutlet fileprivate weak var mergeButtonView: UIView!
-    
     @IBOutlet fileprivate weak var segueButtonView: UIView!
     
     static func show(from: UIViewController, value: String) {
@@ -79,14 +78,14 @@ extension SelectColorViewController {
         segueButton.frame = CGRect(
             x: 0,
             y: 0,
-            width : segueButton.frame.width,
+            width : segueButtonView.frame.width,
             height: SegueButton.height()
         )
         
+        segueButtonView.addSubview(segueButton)
         yourNameLabel.configureLabel() // 名前を表示
         mergeView.addSubview(yourNameLabel)
         mergeButtonView.addSubview(selectColorView)
-       // mergeButtonView.addSubview(segueButton)
         
     }
     
