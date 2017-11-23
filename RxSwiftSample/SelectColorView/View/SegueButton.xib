@@ -17,24 +17,24 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GPo-5O-e8g">
-                    <rect key="frame" x="107" y="12" width="61" height="58"/>
+                    <rect key="frame" x="16" y="12" width="244" height="58"/>
                     <color key="backgroundColor" red="1" green="0.1857388616" blue="0.57339501380000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <state key="normal" title="Button"/>
+                    <state key="normal" title="次の画面へ"/>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="GPo-5O-e8g" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="12" id="AVV-k4-gsd"/>
+                <constraint firstItem="GPo-5O-e8g" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="Gvb-9m-Y5S"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="GPo-5O-e8g" secondAttribute="bottom" constant="8" id="SF6-Dk-aU1"/>
-                <constraint firstItem="GPo-5O-e8g" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="107" id="ZOB-ZU-qQE"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="GPo-5O-e8g" secondAttribute="trailing" constant="108" id="zTl-b8-WRD"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="GPo-5O-e8g" secondAttribute="trailing" constant="16" id="fU6-T1-Afz"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="segue" destination="GPo-5O-e8g" id="IPi-k1-Gi6"/>
             </connections>
-            <point key="canvasLocation" x="-9" y="270.5"/>
+            <point key="canvasLocation" x="-9" y="270"/>
         </view>
     </objects>
 </document>

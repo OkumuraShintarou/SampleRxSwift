@@ -53,7 +53,7 @@
                     <state key="normal" title=" "/>
                 </button>
             </subviews>
-            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="XbX-Gp-QJr" secondAttribute="trailing" constant="49" id="9w3-kC-RQU"/>
                 <constraint firstItem="gg5-Fe-ucm" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="NFx-rM-KJb"/>

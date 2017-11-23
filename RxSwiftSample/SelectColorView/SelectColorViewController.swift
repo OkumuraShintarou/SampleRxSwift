@@ -81,11 +81,10 @@ extension SelectColorViewController {
             width : segueButtonView.frame.width,
             height: SegueButton.height()
         )
-        
-        segueButtonView.addSubview(segueButton)
         yourNameLabel.configureLabel() // 名前を表示
         mergeView.addSubview(yourNameLabel)
         mergeButtonView.addSubview(selectColorView)
+        segueButtonView.addSubview(segueButton)
         
     }
     

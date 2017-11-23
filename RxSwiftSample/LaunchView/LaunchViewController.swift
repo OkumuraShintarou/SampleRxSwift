@@ -62,7 +62,7 @@ extension LaunchViewController {
             .rx
             .text
             .asObservable() // textFieldのtextをObservableのStringに変換
-            .bind(to: label.rx.text) // bind(to:)でUI部品のプロパティをバインド(textとtextをバインド)バインドする事でlabelに反映される
+            .bind(to: label.rx.text) // bind(to:)でUI部品のプロパティをバインド(textField.rx.textとlabe.rx.textをバインド)バインドする事でlabelに反映される
             .disposed(by: bag)
     }
     
