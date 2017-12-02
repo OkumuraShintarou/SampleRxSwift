@@ -25,6 +25,12 @@ final class LaunchViewController: UIViewController {
         return R.storyboard.launchViewController().instantiateInitialViewController()!
     }
     
+    static func show(from: UIViewController) {
+        let vc = R.storyboard.launchViewController().instantiateInitialViewController()! as? LaunchViewController
+        guard let v = vc  else { return }
+        from.navigationController?.pushViewController(v, animated: false)
+    }
+    
     @IBOutlet fileprivate weak var label:     UILabel!
     @IBOutlet fileprivate weak var textField: UITextField!
     @IBOutlet fileprivate weak var button:    UIButton!

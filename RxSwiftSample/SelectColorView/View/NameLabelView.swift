@@ -21,7 +21,7 @@ final class NameLabelView: UIView {
     
     
     static func height() -> CGFloat {
-        return 50
+        return 119
     }
     
     // .xib自体の高さ、幅を指定

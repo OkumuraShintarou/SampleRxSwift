@@ -22,7 +22,6 @@ final class SelectColorViewController: UIViewController {
     fileprivate var helloLabel       : NameLabelView!
     fileprivate var yourNameLabel    : NameLabelView!
     fileprivate var selectColorView  : SelectColorView!
-    fileprivate var segueButton      : SegueButton!
     
     @IBOutlet fileprivate weak var mergeView      : UIView!
     @IBOutlet fileprivate weak var mergeButtonView: UIView!
@@ -74,17 +73,9 @@ extension SelectColorViewController {
             height: SelectColorView.height() // 高さを指定
         )
         
-        segueButton = SegueButton.create(vm: vm)
-        segueButton.frame = CGRect(
-            x: 0,
-            y: 0,
-            width : segueButtonView.frame.width,
-            height: SegueButton.height()
-        )
         yourNameLabel.configureLabel() // 名前を表示
         mergeView.addSubview(yourNameLabel)
         mergeButtonView.addSubview(selectColorView)
-        segueButtonView.addSubview(segueButton)
         
     }
     
@@ -94,7 +85,7 @@ extension SelectColorViewController {
             .redButtonTaps
             .subscribe(onNext: { [weak self]  in
                 guard let wself = self else { return }
-                
+                wself.showAlert(value: "赤色")
         })
         .disposed(by: bag)
         
@@ -102,6 +93,7 @@ extension SelectColorViewController {
             .blueButtonTaps
             .subscribe(onNext: { [weak self]  in
                 guard let wself = self else { return }
+                wself.showAlert(value: "青色")
                 
         })
         .disposed(by: bag)
@@ -110,7 +102,7 @@ extension SelectColorViewController {
             .yellowButtonTaps
             .subscribe(onNext: { [weak self] in
                 guard let wself = self else { return }
-                
+                wself.showAlert(value: "黄色")
         })
         .disposed(by: bag)
         
@@ -118,10 +110,24 @@ extension SelectColorViewController {
             .greenButtonTaps
             .subscribe(onNext: { [weak self] in
                 guard let wself = self else { return }
-                
+                wself.showAlert(value: "緑色")
         })
         .disposed(by: bag)
         
+    }
+    
+    private func showAlert(value: String) {
+        let alert = UIAlertController (
+            title: "あなたの好きな色は",
+            message: value,
+            preferredStyle: .alert
+        )
+        alert.addAction(UIAlertAction(title: "最初の画面へ", style: .default, handler: {
+            (action: UIAlertAction!) -> Void in
+            LaunchViewController.show(from: self)
+        })
+        )
+        self.present(alert, animated: true, completion: nil)
     }
     
 }
