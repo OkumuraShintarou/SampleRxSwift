@@ -15,13 +15,13 @@ final class SelectColorView: UIView {
     let redButtonTaps    = PublishSubject<Void>()
     let blueButtonTaps   = PublishSubject<Void>()
     let yellowButtonTaps = PublishSubject<Void>()
-    let greenButtonTapd  = PublishSubject<Void>()
+    let greenButtonTaps  = PublishSubject<Void>()
     
     fileprivate let bag = DisposeBag()
     
     fileprivate private(set) weak var vm: SelectColorViewModel! {
         didSet {
-            configure()
+            configure() // vmプロパティの変更後にsetされる
         }
     }
     
@@ -35,8 +35,9 @@ final class SelectColorView: UIView {
     }
     
     static func create(vm: SelectColorViewModel) -> SelectColorView {
-        let view = R.nib.selectColorView.firstView(owner: nil)! // ここでSelectColorViewが参照され、クラスが作成される。その時にはまだvmは空なのでconfigureが呼ばれる
-        view.vm = vm //ここでvmにVCのvmを代入。この時点でvm.hogeを参照できる
+        let view = R.nib.selectColorView.firstView(owner: nil)!
+        // ここでSelectColorViewが参照され、カスタムビューのインスタンスが作成される。
+        view.vm = vm // vmのプロパティの値が変更されたのでconfigure()がセットされる
         view.frame.size.height = height() // view(SelectColorViewの高さ)
         view.frame.size.width  = UIScreen.main.bounds.width // view(SelectColorViewの幅)
         return view
@@ -44,15 +45,18 @@ final class SelectColorView: UIView {
 }
     
 fileprivate extension SelectColorView {
+    
     // vmのプロパティが変更された時
     func configure() {
         guard vm != nil else { return } // vmがnilでなければ
-        bindButtons() // vmがnilだったら
+        bindButtons()
     }
     
     func bindButtons() {
-        // ボタンをタップするとresbuttonsにバインドされる。
         // バインドされた時にVCでsubscribeしておいて、挙動を記述する
+        // configureで呼ぶことによって、createされたタイミングでボタンの挙動を記述できる
+        // ボタンをタップするとredbuttontapsにバインドされるという挙動をvmを作成した時にかく
+        
         redButton.rx
             .tap
             .throttle(0.7, latest: false, scheduler: MainScheduler.instance)
@@ -64,5 +68,19 @@ fileprivate extension SelectColorView {
             .throttle(0.7, latest: false, scheduler: MainScheduler.instance)
             .bind(to: blueButtonTaps)
             .disposed(by: bag)
+        
+        yellowButton.rx
+            .tap
+            .throttle(0.7, latest: false, scheduler: MainScheduler.instance)
+            .bind(to: yellowButtonTaps)
+            .disposed(by: bag)
+        
+        greenButton.rx
+            .tap
+            .throttle(0.7, latest: false, scheduler: MainScheduler.instance)
+            .bind(to: greenButtonTaps)
+            .disposed(by: bag)
         }
+    
 }
+

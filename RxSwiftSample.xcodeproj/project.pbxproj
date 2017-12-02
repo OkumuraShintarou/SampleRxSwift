@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		227281AC41875176312EDE3E /* Pods_RxSwiftSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6011E0BF8C47279B3DA2D56 /* Pods_RxSwiftSample.framework */; };
+		500F77761FC5B0670078073C /* SegueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500F77751FC5B0670078073C /* SegueButton.swift */; };
+		500F77781FC5B08B0078073C /* SegueButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 500F77771FC5B08B0078073C /* SegueButton.xib */; };
 		501F98131FB453A800364941 /* LabelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 501F98121FB453A800364941 /* LabelView.xib */; };
 		501F98171FB4546400364941 /* NameLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501F98161FB4546400364941 /* NameLabelView.swift */; };
 		506310C51FB18613009A594C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506310C41FB18613009A594C /* AppDelegate.swift */; };
@@ -42,6 +44,8 @@
 
 /* Begin PBXFileReference section */
 		05F20170A59B1D2F5A8EE8E1 /* Pods-RxSwiftSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwiftSample/Pods-RxSwiftSample.debug.xcconfig"; sourceTree = "<group>"; };
+		500F77751FC5B0670078073C /* SegueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueButton.swift; sourceTree = "<group>"; };
+		500F77771FC5B08B0078073C /* SegueButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SegueButton.xib; sourceTree = "<group>"; };
 		501F98121FB453A800364941 /* LabelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabelView.xib; sourceTree = "<group>"; };
 		501F98161FB4546400364941 /* NameLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameLabelView.swift; sourceTree = "<group>"; };
 		506310C11FB18613009A594C /* RxSwiftSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxSwiftSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,6 +104,8 @@
 				501F98121FB453A800364941 /* LabelView.xib */,
 				50FDC8FB1FB75D3B00BD6CFF /* SelectColorView.swift */,
 				50FDC8F91FB75B9E00BD6CFF /* SelectColorView.xib */,
+				500F77751FC5B0670078073C /* SegueButton.swift */,
+				500F77771FC5B08B0078073C /* SegueButton.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -245,6 +251,7 @@
 				506310F41FB2C487009A594C /* SelectColorViewController.storyboard in Resources */,
 				50FDC8FA1FB75B9E00BD6CFF /* SelectColorView.xib in Resources */,
 				506310CC1FB18613009A594C /* Assets.xcassets in Resources */,
+				500F77781FC5B08B0078073C /* SegueButton.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,6 +352,7 @@
 				506310EA1FB2C356009A594C /* SelectColorViewController.swift in Sources */,
 				506310C51FB18613009A594C /* AppDelegate.swift in Sources */,
 				506310EC1FB2C36D009A594C /* SelectColorViewModel.swift in Sources */,
+				500F77761FC5B0670078073C /* SegueButton.swift in Sources */,
 				501F98171FB4546400364941 /* NameLabelView.swift in Sources */,
 				506310F61FB2C9D9009A594C /* R.generated.swift in Sources */,
 			);
